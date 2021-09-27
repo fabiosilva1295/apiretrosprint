@@ -5,7 +5,7 @@ const port = process.env.PORT || 4001;
 const connection = require('./database/connection');
 const Mensagem = require('./database/Mensagens');
 const cors = require('cors');
-const { application } = require('express');
+const { application } = require('express'); 
 
 //conexão com o banco de dados
 connection.authenticate().then(()=>{

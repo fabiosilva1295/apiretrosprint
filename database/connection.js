@@ -4,4 +4,4 @@ const connection = new Sequelize('retrosprint', 'root', 'naruto5997', {
     dialect: 'mysql'
 });
 
-module.exports = connection;
+module.exports = connection; 

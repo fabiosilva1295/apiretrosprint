@@ -8,7 +8,7 @@ const Mensagem = connection.define('mensagens', {
     },
     mensagem: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false  
     }
 });
 
