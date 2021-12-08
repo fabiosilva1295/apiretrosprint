@@ -1,35 +1,31 @@
 const Sequelize = require('sequelize');
-const connection = require('./connection');
+const connection = require('./connection')
 
-const Mensagem = connection.define('mensagens', {
-    categoria: {
+const Users = connection.define('users', {
+    username:{
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+        primarykey: true
+    },
+    password:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    mensagem: {
+    firstName: {
         type: Sequelize.STRING,
-        allowNull: false  
+        allowNull: false
     },
     squad: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    user: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    sprint: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    sm: {
+    funcao: {
         type: Sequelize.STRING,
         allowNull: false
     }
+})
 
+Users.sync({force: false});
 
-});
-
-Mensagem.sync({force: false})
-
-module.exports = Mensagem;
+module.exports = Users;
